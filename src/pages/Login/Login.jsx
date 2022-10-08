@@ -1,6 +1,5 @@
 import {useRef, useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import Success from '../../components/Success/Success';
 import './login.scss'
 
 
@@ -34,7 +33,12 @@ const Login = () => {
   return (
     <div className='login'>
       {success ? (
-        <Success/>
+        <div className='login__container'>
+          <h2 className='login__title'>Log In Complete</h2>
+          <Link to='/Home' className='login__link'>
+            Go to Home page!
+          </Link>
+        </div>
       ) : (
       <div className='login__container'>
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -64,7 +68,7 @@ const Login = () => {
               value={pwd}
               required
             />
-            <button className='form__button'>Sign In</button>
+            <button className='login__button'>Sign In</button>
             </form>
         <p className='login__footer'>
           Need an Account?
