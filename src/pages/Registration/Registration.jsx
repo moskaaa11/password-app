@@ -29,19 +29,19 @@ const Registration = () => {
           <div className='registration__form__container'>
             <div className='registration__box'>
               <label className='registration__label' >Username</label>
-              <input className='registration__input' type="text"  placeholder="moskaaa11"/>
+              <input className='registration__input' type="text"  placeholder="moskaaa11" required/>
               <label className='registration__label' >Email</label>
-              <input className='registration__input'  type="email"  placeholder="john@gmail.com"/>
+              <input className='registration__input'  type="email"  placeholder="john@gmail.com" required/>
               <label className='registration__label' >Phone</label>
-              <input className='registration__input' type="text"  placeholder="+38(091)123-12-12"/>
+              <input className='registration__input' type="text"  placeholder="+38(091)123-12-12" required/>
             </div>
             <div className='registration__box'>
               <label className='registration__label' >Password</label>
-              <input className='registration__input' type="password"/>
+              <input className='registration__input' type="password" placeholder='password' required/>
               <label className='registration__label' >Adress</label>
-              <input className='registration__input' type="text"  placeholder="Brooklyn str, 234 Goopy Yd, NY"/>
+              <input className='registration__input' type="text"  placeholder="Brooklyn str, 234 Goopy Yd, NY" required/>
               <label className='registration__label' >Country</label>
-              <input className='registration__input' type="text"  placeholder="USA"/>
+              <input className='registration__input' type="text"  placeholder="USA" required/>
             </div>
           </div>
           <button className='registration__button'>Send</button>
