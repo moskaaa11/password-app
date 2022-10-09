@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState} from 'react'
 import { Link } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
 import NewItem from '../../components/newItem/NewItem';
@@ -7,30 +7,30 @@ import './home.scss'
 
 const Home = () => {
 
-    const [box, setBox] = useState([
-      {id: 1, item: 'Gmail', password: 'qwerty123'},
-      {id: 2, item: 'Facebook', password: 'qwerty123'},
-      {id: 3, item: 'GitHub', password: 'qwerty123'},
-    ])
+
+    const [box, setBox] = useState(JSON.parse(localStorage.getItem('passwordArr')))
 
     const createItem = (newBox) => {
+      localStorage.clear()
       setBox([...box, newBox])
       setModal(false)
     }
 
     const removeBox = (boxes) => {
       setBox(box.filter(box => box.id !== boxes.id))
+      localStorage.clear()
+      localStorage.setItem('passwordArr', JSON.stringify(box))
     }
 
     const [modal, setModal] = useState (false)
 
-
+    localStorage.setItem('passwordArr', JSON.stringify(box))
+    
   return (
     <div className='home__container'>
-      
       <Modal 
-      visible={modal}
-      setVisible={setModal}
+        visible={modal}
+        setVisible={setModal}
       >
         <NewItem create={createItem}/>
       </Modal>
@@ -48,7 +48,12 @@ const Home = () => {
       <h1 className='home__title'>List of passwords</h1>
       <div className='home__box'>
         {box.map((box, index)=>
-           <Password remove={removeBox} number={index + 1} box={box} key={box.id} /> 
+           <Password 
+           remove={removeBox} 
+           number={index + 1} 
+           box={box} 
+           key={box.id} 
+           /> 
         )}
       </div>
   </div>
