@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import './password.scss'
 
-const Password = (props,remove) => {
+const Password = (props,remove,edit) => {
 
     const [show,setShow] = useState('password')
 
-    const [value, setValue] = useState (`${props.box.password}`)
+    const [inValue, setInValue] = useState (`${props.box.password}`)
 
     const Hide = () => {
        if(show == 'password') {
@@ -14,15 +14,7 @@ const Password = (props,remove) => {
         setShow('password')
        }
     }
-
-    const Edit = () => {
-        if(show == 'password') {
-            setShow('text')
-            
-           } else {
-            setShow('password')
-           }
-    }
+    
     
   return (
     <div className='password__container'>
@@ -32,14 +24,13 @@ const Password = (props,remove) => {
             <div className='password__square'>
                 <input className='password__input' 
                 type={show} 
-                value={value}
+                value={inValue}
                 />
             </div>
         </div>
         <div className='password__box'>
             <button className='password__button' onClick={Hide}>View</button>
             <button className='password__button'  onClick={() => props.remove(props.box)}>Delete</button>
-            <button className='password__button' onClick={Edit}>Edit</button>
         </div>
     </div>
   )
