@@ -5,26 +5,40 @@ const Password = (props,remove) => {
 
     const [show,setShow] = useState('password')
 
+    const [value, setValue] = useState (`${props.box.password}`)
+
     const Hide = () => {
+       if(show == 'password') {
         setShow('text')
+       } else {
+        setShow('password')
+       }
     }
 
     const Edit = () => {
-        setShow('text')
+        if(show == 'password') {
+            setShow('text')
+            
+           } else {
+            setShow('password')
+           }
     }
     
   return (
     <div className='password__container'>
         <div className='password__box'>
-            <h3 className='password__text'>{props.box.id}</h3>
+            <p className='password__text'>{props.number}</p>
             <p className='password__text'>{props.box.item}</p>
             <div className='password__square'>
-                <input className='password__input' type={show} value={props.box.password} />
+                <input className='password__input' 
+                type={show} 
+                value={value}
+                />
             </div>
         </div>
         <div className='password__box'>
             <button className='password__button' onClick={Hide}>View</button>
-            <button className='password__button'>Delete</button>
+            <button className='password__button'  onClick={() => props.remove(props.box)}>Delete</button>
             <button className='password__button' onClick={Edit}>Edit</button>
         </div>
     </div>

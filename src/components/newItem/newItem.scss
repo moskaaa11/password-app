@@ -1,0 +1,30 @@
+.new {
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    &__input {
+        background: aliceblue;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(0, 7, 99);
+        padding: 5px;
+    }
+    
+    &__button {
+        border-radius: 15px;
+        background: aliceblue;
+        color: #222;
+        font-size: 15px;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background: rgb(0, 7, 99);
+            color: aliceblue;
+        }
+    }
+}

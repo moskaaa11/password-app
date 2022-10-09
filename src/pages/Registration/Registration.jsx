@@ -17,7 +17,7 @@ const Registration = () => {
         <div className='registration__container'>
           <h2 className='registration__title'>Log In Complete</h2>
           <Link to='/' className='registration__link'>
-            Go to Log In page!
+            <p>Go to Log In page!</p>
           </Link>
         </div>
       ) : (

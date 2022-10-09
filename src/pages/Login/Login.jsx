@@ -73,7 +73,7 @@ const Login = () => {
         <p className='login__footer'>
           Need an Account?
           <Link to='/Registration' className='login__link'>
-            <a href="">Sign Up</a>
+            <p>Sign Up</p>
           </Link>
         </p>
       </div>

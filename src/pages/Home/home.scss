@@ -1,9 +1,8 @@
 .home {
 
     &__header {
-        position: absolute;
-        top: 5px;
-        right: 5px;
+        display: flex;
+        gap: 370px;
     }
 
     &__button {
