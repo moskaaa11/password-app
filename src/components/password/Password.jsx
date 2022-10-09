@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './password.scss'
 
-const Password = (props,remove,edit) => {
+const Password = (props) => {
 
     const [show,setShow] = useState('password')
 
