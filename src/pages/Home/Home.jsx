@@ -7,23 +7,22 @@ import './home.scss'
 
 const Home = () => {
 
+  const [box, setBox] = useState(JSON.parse(localStorage.getItem('passwordArr')))
 
-    const [box, setBox] = useState(JSON.parse(localStorage.getItem('passwordArr')))
+   const createItem = (newBox) => {
+    localStorage.clear()
+    setBox([...box, newBox])
+    setModal(false)      
+  }
 
-    const createItem = (newBox) => {
-      localStorage.clear()
-      setBox([...box, newBox])
-      setModal(false)      
-    }
+  const removeBox = (boxes) => {
+    setBox(box.filter(box => box.id !== boxes.id))
+  }
 
-    const removeBox = (boxes) => {
-      setBox(box.filter(box => box.id !== boxes.id))
-    }
+  const [modal, setModal] = useState (false)
 
-    const [modal, setModal] = useState (false)
+  localStorage.setItem('passwordArr', JSON.stringify(box))
 
-    
-    localStorage.setItem('passwordArr', JSON.stringify(box))
   return (
     <div className='home__container'>
       <Modal 
