@@ -13,19 +13,17 @@ const Home = () => {
     const createItem = (newBox) => {
       localStorage.clear()
       setBox([...box, newBox])
-      setModal(false)
+      setModal(false)      
     }
 
     const removeBox = (boxes) => {
       setBox(box.filter(box => box.id !== boxes.id))
-      localStorage.clear()
-      localStorage.setItem('passwordArr', JSON.stringify(box))
     }
 
     const [modal, setModal] = useState (false)
 
-    localStorage.setItem('passwordArr', JSON.stringify(box))
     
+    localStorage.setItem('passwordArr', JSON.stringify(box))
   return (
     <div className='home__container'>
       <Modal 

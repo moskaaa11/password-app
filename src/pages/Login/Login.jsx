@@ -13,6 +13,10 @@ const Login = () => {
 
   const [user, setUser] = useState('');
   const [pwd, setPwd] = useState('');
+
+  const startArr = [];
+
+  localStorage.setItem('passwordArr', JSON.stringify(startArr))
   
   useEffect(() => {
     userRef.current.focus()
